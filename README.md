@@ -2,6 +2,8 @@
 
 ## Setup environment 
 
+Github Project: https://github.com/paulnguyen-mn/redux-photo-app
+
 ### 1. Setup ReactJS App via Create React App
 
 > Link: https://create-react-app.dev/docs/getting-started/
@@ -60,7 +62,7 @@ function App() {
   return (
     <BrowserRouter>
       <Switch>
-        <Route path="/photo" component={Photo} />
+        <Route path="/photos" component={Photo} />
         <Route path="/user" component={User} />
         <Route component={NotFound} />
       </Switch>

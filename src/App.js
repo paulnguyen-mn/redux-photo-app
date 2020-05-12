@@ -14,15 +14,15 @@ function App() {
 
           {/* TODO: Remove after testing */}
           <ul>
-            <li><Link to="/photo">Go to photo page</Link></li>
-            <li><Link to="/photo/add">Go to Add new photo page</Link></li>
-            <li><Link to="/photo/123">Go to Edit photo page</Link></li>
+            <li><Link to="/photos">Go to photo page</Link></li>
+            <li><Link to="/photos/add">Go to Add new photo page</Link></li>
+            <li><Link to="/photos/123">Go to Edit photo page</Link></li>
           </ul>
 
           <Switch>
-            <Redirect exact from="/" to="/photo" />
+            <Redirect exact from="/" to="/photos" />
 
-            <Route path="/photo" component={Photo} />
+            <Route path="/photos" component={Photo} />
             <Route component={NotFound} />
           </Switch>
         </BrowserRouter>
