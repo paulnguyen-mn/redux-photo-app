@@ -1,9 +1,11 @@
 import { PHOTO_CATEGORY_OPTIONS } from 'constants/global';
 import Images from 'constants/images';
+import InputField from 'custom-fields/InputField';
+import SelectField from 'custom-fields/SelectField';
+import { FastField, Form, Formik } from 'formik';
 import PropTypes from 'prop-types';
 import React from 'react';
-import Select from 'react-select';
-import { Button, Form, FormGroup, Input, Label } from 'reactstrap';
+import { Button, FormGroup, Label } from 'reactstrap';
 
 PhotoForm.propTypes = {
   onSubmit: PropTypes.func,
@@ -14,38 +16,56 @@ PhotoForm.defaultProps = {
 }
 
 function PhotoForm(props) {
+  const initialValues = {
+    title: '',
+    categoryId: null,
+  };
+
   // npm i --save react-select
   return (
-    <Form>
-      <FormGroup>
-        <Label for="titleId">Title</Label>
-        <Input name="title" id="titleId" placeholder="Eg: Wow nature ..." />
-      </FormGroup>
+    <Formik
+      initialValues={initialValues}
+    >
+      {formikProps => {
+        // do something here ...
+        const { values, errors, touched } = formikProps;
+        console.log({ values, errors, touched });
 
-      <FormGroup>
-        <Label for="categoryId">Category</Label>
-        <Select
-          id="categoryId"
-          name="categoryId"
+        return (
+          <Form>
+            <FastField
+              name="title"
+              component={InputField}
 
-          placeholder="What's your photo category?"
-          options={PHOTO_CATEGORY_OPTIONS}
-        />
-      </FormGroup>
+              label="Title"
+              placeholder="Eg: Wow nature ..."
+            />
 
-      <FormGroup>
-        <Label for="categoryId">Photo</Label>
+            <FastField
+              name="categoryId"
+              component={SelectField}
 
-        <div><Button type="button" outline color="primary">Random a photo</Button></div>
-        <div>
-          <img width="200px" height="200px" src={Images.COLORFUL_BG} alt="colorful background" />
-        </div>
-      </FormGroup>
+              label="Category"
+              placeholder="What's your photo category?"
+              options={PHOTO_CATEGORY_OPTIONS}
+            />
 
-      <FormGroup>
-        <Button color="primary">Add to album</Button>
-      </FormGroup>
-    </Form>
+            <FormGroup>
+              <Label for="categoryId">Photo</Label>
+
+              <div><Button type="button" outline color="primary">Random a photo</Button></div>
+              <div>
+                <img width="200px" height="200px" src={Images.COLORFUL_BG} alt="colorful background" />
+              </div>
+            </FormGroup>
+
+            <FormGroup>
+              <Button color="primary">Add to album</Button>
+            </FormGroup>
+          </Form>
+        );
+      }}
+    </Formik>
   );
 }
 
