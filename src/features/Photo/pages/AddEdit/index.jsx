@@ -5,6 +5,7 @@ import './styles.scss';
 import { useDispatch } from 'react-redux';
 import { addPhoto } from 'features/Photo/photoSlice';
 import { useHistory } from 'react-router-dom';
+import { randomNumber } from 'utils/common';
 
 AddEditPage.propTypes = {};
 
@@ -17,7 +18,11 @@ function AddEditPage(props) {
       console.log('Form submit: ', values);
 
       setTimeout(() => {
-        const action = addPhoto(values);
+        const newPhoto = {
+          ...values,
+          id: randomNumber(10000, 99999),
+        }
+        const action = addPhoto(newPhoto);
         console.log({ action });
         dispatch(action);
 

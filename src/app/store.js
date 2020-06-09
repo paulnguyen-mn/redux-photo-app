@@ -10,60 +10,77 @@ const store = configureStore({
   preloadedState: {
     photos: [
       {
-        categoryId: 1,
-        photo: 'https://picsum.photos/id/77/300/300',
-        title: 'Dolor Lorem aliqua ea consectetur in tempor reprehenderit consequat officia.'
-      },
-      {
+        id: 91176,
         categoryId: 5,
-        photo: 'https://picsum.photos/id/622/300/300',
-        title: 'Non aliqua proident magna pariatur eu deserunt eu ipsum velit aliquip.'
+        photo: 'https://picsum.photos/id/532/300/300',
+        title: 'Enim laboris dolore consectetur et fugiat do amet eiusmod anim proident do culpa irure consectetur.'
       },
       {
-        categoryId: 4,
-        photo: 'https://picsum.photos/id/477/300/300',
-        title: 'Aliquip elit laboris eu aute irure enim reprehenderit voluptate consectetur minim minim adipisicing commodo.'
-      },
-      {
-        categoryId: 3,
-        photo: 'https://picsum.photos/id/625/300/300',
-        title: 'Nostrud velit veniam esse officia.'
-      },
-      {
-        categoryId: 3,
-        photo: 'https://picsum.photos/id/20/300/300',
-        title: 'Anim Lorem consectetur reprehenderit ea nulla est consectetur ullamco minim proident.'
-      },
-      {
+        id: 82605,
         categoryId: 1,
-        photo: 'https://picsum.photos/id/433/300/300',
-        title: 'Laboris quis et ex exercitation do tempor in.'
+        photo: 'https://picsum.photos/id/43/300/300',
+        title: 'Ad officia magna veniam sunt.'
       },
       {
-        categoryId: 4,
-        photo: 'https://picsum.photos/id/769/300/300',
-        title: 'Est sunt dolor cillum duis exercitation.'
-      },
-      {
-        categoryId: 2,
-        photo: 'https://picsum.photos/id/292/300/300',
-        title: 'Culpa adipisicing occaecat culpa laborum Lorem amet consectetur fugiat laborum do Lorem excepteur ea dolor.'
-      },
-      {
-        categoryId: 5,
-        photo: 'https://picsum.photos/id/397/300/300',
-        title: 'Aliqua ad qui occaecat do velit elit deserunt ipsum culpa magna adipisicing.'
-      },
-      {
-        categoryId: 2,
-        photo: 'https://picsum.photos/id/756/300/300',
-        title: 'Aliquip elit ullamco magna in dolore aliqua do.'
-      },
-      {
+        id: 74760,
         categoryId: 3,
-        photo: 'https://picsum.photos/id/790/300/300',
-        title: 'Irure labore ut qui in.'
-      }
+        photo: 'https://picsum.photos/id/722/300/300',
+        title: 'Minim anim in sunt esse nisi sit magna consequat in sit laboris adipisicing.'
+      },
+      {
+        id: 39588,
+        categoryId: 5,
+        photo: 'https://picsum.photos/id/294/300/300',
+        title: 'Deserunt in tempor est id consectetur cupidatat.'
+      },
+      {
+        id: 72133,
+        categoryId: 4,
+        photo: 'https://picsum.photos/id/229/300/300',
+        title: 'Labore culpa velit sunt sit anim ad do veniam do proident sunt et nisi mollit.'
+      },
+      {
+        id: 95333,
+        categoryId: 1,
+        photo: 'https://picsum.photos/id/862/300/300',
+        title: 'Fugiat fugiat voluptate tempor minim ipsum nisi culpa magna officia ea deserunt tempor.'
+      },
+      {
+        id: 62419,
+        categoryId: 3,
+        photo: 'https://picsum.photos/id/515/300/300',
+        title: 'Excepteur nisi aliquip ex aliqua consectetur id laboris cillum elit dolor dolor anim sint.'
+      },
+      {
+        id: 12569,
+        categoryId: 5,
+        photo: 'https://picsum.photos/id/730/300/300',
+        title: 'Occaecat exercitation Lorem cupidatat adipisicing elit duis consequat esse et tempor eu enim cupidatat.'
+      },
+      {
+        id: 47434,
+        categoryId: 3,
+        photo: 'https://picsum.photos/id/287/300/300',
+        title: 'Veniam officia est nulla proident labore.'
+      },
+      {
+        id: 52685,
+        categoryId: 3,
+        photo: 'https://picsum.photos/id/859/300/300',
+        title: 'Ut incididunt do magna culpa consectetur id deserunt et enim elit quis.'
+      },
+      {
+        id: 69928,
+        categoryId: 5,
+        photo: 'https://picsum.photos/id/110/300/300',
+        title: 'Nisi velit fugiat voluptate fugiat magna officia qui fugiat ad non.'
+      },
+      {
+        id: 86160,
+        categoryId: 5,
+        photo: 'https://picsum.photos/id/649/300/300',
+        title: 'Id ex enim non dolore reprehenderit eu ullamco.'
+      },
     ]
   }
 });
