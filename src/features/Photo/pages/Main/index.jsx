@@ -12,6 +12,14 @@ function MainPage(props) {
   const photos = useSelector(state => state.photos);
   console.log('List of photos: ', photos);
 
+  const handlePhotoEditClick = (photo) => {
+    console.log('Edit: ', photo);
+  }
+
+  const handlePhotoRemoveClick = (photo) => {
+    console.log('Remove: ', photo);
+  }
+
   return (
     <div className="photo-main">
       <Banner title="Your awesome photos 🎉" backgroundUrl={Images.PINK_BG} />
@@ -21,7 +29,11 @@ function MainPage(props) {
           <Link to="/photos/add">Add new photo</Link>
         </div>
 
-        <PhotoList photoList={photos} />
+        <PhotoList
+          photoList={photos}
+          onPhotoEditClick={handlePhotoEditClick}
+          onPhotoRemoveClick={handlePhotoRemoveClick}
+        />
       </Container>
     </div>
   );
