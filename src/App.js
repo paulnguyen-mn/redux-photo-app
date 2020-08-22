@@ -1,12 +1,15 @@
+import { unwrapResult } from '@reduxjs/toolkit';
 import productApi from 'api/productApi';
+import { getMe } from 'app/userSlice';
 import SignIn from 'features/Auth/pages/SignIn';
 import firebase from 'firebase';
 import React, { Suspense, useEffect, useState } from 'react';
+import { useDispatch } from 'react-redux';
 import { BrowserRouter, Redirect, Route, Switch } from 'react-router-dom';
+import { Button } from 'reactstrap';
 import './App.scss';
 import Header from './components/Header';
 import NotFound from './components/NotFound';
-import { Button } from 'reactstrap';
 
 // Lazy load - Code splitting
 const Photo = React.lazy(() => import('./features/Photo'));
@@ -20,6 +23,7 @@ firebase.initializeApp(config);
 
 function App() {
   const [productList, setProductList] = useState([]);
+  const dispatch = useDispatch();
 
   useEffect(() => {
     const fetchProductList = async () => {
@@ -49,10 +53,16 @@ function App() {
         return;
       }
 
-      // console.log('Logged in user: ', user.displayName);
-
-      // const token = await user.getIdToken();
-      // console.log('Logged in user token: ', token);
+      // Get me when signed in
+      // const action = getMe();
+      try {
+        const actionResult = await dispatch(getMe());
+        const currentUser = unwrapResult(actionResult);
+        console.log('Logged in user: ', currentUser);
+      } catch (error) {
+        console.log('Failed to login ', error.message);
+        // show toast error
+      }
     });
 
     return () => unregisterAuthObserver();
